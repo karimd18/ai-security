@@ -106,11 +106,24 @@ const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
     React.ComponentProps<'div'> & {
+      // payload may not be present on the extracted Tooltip props type, so add it here
+      payload?: any;
       hideLabel?: boolean;
       hideIndicator?: boolean;
       indicator?: 'line' | 'dot' | 'dashed';
       nameKey?: string;
       labelKey?: string;
+      label?: React.ReactNode | string;
+      labelFormatter?: (value: any, payload?: any) => React.ReactNode;
+      labelClassName?: string;
+      formatter?: (
+        value: any,
+        name?: any,
+        props?: any,
+        index?: number,
+        payload?: any
+      ) => React.ReactNode;
+      color?: string;
     }
 >(
   (
@@ -185,7 +198,7 @@ const ChartTooltipContent = React.forwardRef<
       >
         {!nestLabel ? tooltipLabel : null}
         <div className="grid gap-1.5">
-          {payload.map((item, index) => {
+          {payload.map((item: any, index: number) => {
             const key = `${nameKey || item.name || item.dataKey || 'value'}`;
             const itemConfig = getPayloadConfigFromPayload(config, item, key);
             const indicatorColor = color || item.payload.fill || item.color;
@@ -260,8 +273,9 @@ const ChartLegend = RechartsPrimitive.Legend;
 
 const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<'div'> &
-    Pick<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
+  React.ComponentProps<'div'> & {
+      payload?: RechartsPrimitive.LegendPayload[];
+      verticalAlign?: 'top' | 'bottom' | 'middle';
       hideIcon?: boolean;
       nameKey?: string;
     }
