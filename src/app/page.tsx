@@ -41,7 +41,8 @@ const services = [
   {
     icon: Video,
     title: "CCTV Systems",
-    description: "Intelligent video surveillance with real-time threat detection and predictive analytics.",
+    description:
+      "Intelligent video surveillance with real-time threat detection and predictive analytics.",
     aiFeatures: [
       "Smart anomaly detection via computer vision",
       "Predictive incident alerts before escalation",
@@ -53,7 +54,8 @@ const services = [
   {
     icon: Flame,
     title: "Fire Alarm",
-    description: "AI-enhanced fire detection systems with smoke pattern recognition and rapid response.",
+    description:
+      "AI-enhanced fire detection systems with smoke pattern recognition and rapid response.",
     aiFeatures: [
       "Smoke pattern analysis for early detection",
       "Predictive maintenance alerts",
@@ -65,7 +67,8 @@ const services = [
   {
     icon: Lock,
     title: "Access Control",
-    description: "Advanced access management with facial verification and behavior analytics.",
+    description:
+      "Advanced access management with facial verification and behavior analytics.",
     aiFeatures: [
       "Facial verification and liveness detection",
       "Tailgating detection via AI",
@@ -77,7 +80,8 @@ const services = [
   {
     icon: Bell,
     title: "Intrusion Alarm",
-    description: "Machine learning-powered intrusion detection with false alarm prevention.",
+    description:
+      "Machine learning-powered intrusion detection with false alarm prevention.",
     aiFeatures: [
       "Behavior analysis for threat assessment",
       "False alarm reduction via ML patterns",
@@ -89,7 +93,8 @@ const services = [
   {
     icon: HomeIcon,
     title: "Home Automation",
-    description: "Smart home integration with AI-learned user behavior and secure routines.",
+    description:
+      "Smart home integration with AI-learned user behavior and secure routines.",
     aiFeatures: [
       "AI-learned user behavior patterns",
       "Remote monitoring with anomaly alerts",
@@ -101,7 +106,8 @@ const services = [
   {
     icon: Bot,
     title: "Security Robotics",
-    description: "Autonomous patrol robots with visual AI and threat detection capabilities.",
+    description:
+      "Autonomous patrol robots with visual AI and threat detection capabilities.",
     aiFeatures: [
       "Autonomous navigation and patrol",
       "Visual threat detection and classification",
@@ -132,22 +138,26 @@ const aiCapabilities = [
   {
     icon: Eye,
     title: "Real-Time Anomaly Detection",
-    description: "Computer vision analyzes video feeds 24/7, instantly identifying unusual behavior patterns.",
+    description:
+      "Computer vision analyzes video feeds 24/7, instantly identifying unusual behavior patterns.",
   },
   {
     icon: Brain,
     title: "Predictive Maintenance",
-    description: "AI predicts sensor failures before they occur, reducing downtime by 60%.",
+    description:
+      "AI predicts sensor failures before they occur, reducing downtime by 60%.",
   },
   {
     icon: Zap,
     title: "Automated Incident Triage",
-    description: "Intelligent classification and prioritization of security events for faster response.",
+    description:
+      "Intelligent classification and prioritization of security events for faster response.",
   },
   {
     icon: Sparkles,
     title: "Intelligent Reporting",
-    description: "Auto-generated insights and KPI dashboards with natural language summaries.",
+    description:
+      "Auto-generated insights and KPI dashboards with natural language summaries.",
   },
 ];
 
@@ -212,7 +222,8 @@ export default function Home() {
           </h1>
 
           <p className="text-xl md:text-2xl text-[hsl(var(--brand-muted))] mb-12 max-w-3xl mx-auto leading-relaxed">
-            End-to-end security systems engineered with built-in AI for prevention, detection, and rapid response across MENA.
+            End-to-end security systems engineered with built-in AI for
+            prevention, detection, and rapid response across MENA.
           </p>
 
           {/* CTAs – fixed outline text visibility */}
@@ -235,16 +246,19 @@ export default function Home() {
               asChild
               aria-label="Explore services"
             >
-              <Link href="/services">
-                Explore services
-              </Link>
+              <Link href="/services">Explore services</Link>
             </Button>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-            <div className="text-sm text-[hsl(var(--brand-muted))]">Trusted By:</div>
+            <div className="text-sm text-[hsl(var(--brand-muted))]">
+              Trusted By:
+            </div>
             {["ISO 27001", "SOC 2", "GDPR", "NIST"].map((cert) => (
-              <Badge key={cert} className="border-[hsl(var(--brand-border))] text-[hsl(var(--brand-muted))]">
+              <Badge
+                key={cert}
+                className="border-[hsl(var(--brand-border))] text-[hsl(var(--brand-muted))] bg-[hsl(var(--brand-surface))]/50 hover:bg-[hsl(var(--brand-surface))]/70 transition-colors text-sm"
+              >
                 {cert}
               </Badge>
             ))}
@@ -257,7 +271,10 @@ export default function Home() {
       </section>
 
       {/* STATS */}
-      <section ref={statsRef} className="relative py-20 border-y border-[hsl(var(--brand-border))]">
+      <section
+        ref={statsRef}
+        className="relative py-20 border-y border-[hsl(var(--brand-border))]"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -270,7 +287,9 @@ export default function Home() {
                 <div className="text-4xl md:text-5xl font-bold text-glow mb-2">
                   {statsInView ? stat.value : "—"}
                 </div>
-                <div className="text-sm text-[hsl(var(--brand-muted))]">{stat.label}</div>
+                <div className="text-sm text-[hsl(var(--brand-muted))]">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -288,10 +307,14 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 AI Security Systems
                 <br />
-                <span className="text-[hsl(var(--brand-accent-1))]">In Real-Time</span>
+                <span className="text-[hsl(var(--brand-accent-1))]">
+                  In Real-Time
+                </span>
               </h2>
               <p className="text-lg text-[hsl(var(--brand-muted))] mb-8 leading-relaxed">
-                Watch how our AI-powered security platform detects threats, analyzes patterns, and responds automatically to keep your assets protected 24/7.
+                Watch how our AI-powered security platform detects threats,
+                analyzes patterns, and responds automatically to keep your
+                assets protected 24/7.
               </p>
               <div className="space-y-4">
                 {[
@@ -302,21 +325,25 @@ export default function Home() {
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="h-2 w-2 rounded-full bg-[hsl(var(--brand-accent-1))]" />
-                    <span className="text-[hsl(var(--brand-muted))]">{feature}</span>
+                    <span className="text-[hsl(var(--brand-muted))]">
+                      {feature}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-video rounded-2xl bg-gradient-to-br from-[hsl(var(--brand-accent-1))]/20 to-[hsl(var(--brand-accent-2))]/20 border border-[hsl(var(--brand-border))] overflow-hidden flex items-center justify-center group cursor-pointer hover:border-[hsl(var(--brand-accent-1))] transition-all">
-                <div className="absolute inset-0 bg-[hsl(var(--brand-bg))]/40 backdrop-blur-sm" />
-                <div className="relative z-10 text-center">
-                  <div className="h-20 w-20 rounded-full bg-[hsl(var(--brand-accent-1))]/20 border-2 border-[hsl(var(--brand-accent-1))] flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <div className="h-0 w-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-[hsl(var(--brand-accent-1))] border-b-[12px] border-b-transparent ml-1" />
-                  </div>
-                  <p className="text-sm text-[hsl(var(--brand-muted))]">Video Showcase</p>
-                  <p className="text-xs text-[hsl(var(--brand-muted))]/60 mt-1">Coming Soon</p>
-                </div>
+              <div className="aspect-video rounded-2xl overflow-hidden border border-[hsl(var(--brand-border))] group hover:border-[hsl(var(--brand-accent-1))] transition-all">
+                <video
+                  src="/video.mp4"
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  playsInline
+                  controls
+                  poster="/thumbnail.jpg" // optional preview image
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
               </div>
             </div>
           </div>
@@ -332,16 +359,24 @@ export default function Home() {
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Security Systems
-              <span className="text-[hsl(var(--brand-accent-1))]"> Reimagined with AI</span>
+              <span className="text-[hsl(var(--brand-accent-1))]">
+                {" "}
+                Reimagined with AI
+              </span>
             </h2>
             <p className="text-xl text-[hsl(var(--brand-muted))] max-w-3xl mx-auto">
-              Every system is augmented with artificial intelligence to deliver prevention, not just detection.
+              Every system is augmented with artificial intelligence to deliver
+              prevention, not just detection.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <div key={index} className="animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
+              <div
+                key={index}
+                className="animate-slide-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <ServiceCard {...service} />
               </div>
             ))}
@@ -369,9 +404,12 @@ export default function Home() {
             <Badge className="mb-4 bg-[hsl(var(--brand-accent-1))]/10 text-[hsl(var(--brand-accent-1))] border-[hsl(var(--brand-accent-1))]/30">
               Core AI Capabilities
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">The Intelligence Layer</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              The Intelligence Layer
+            </h2>
             <p className="text-xl text-[hsl(var(--brand-muted))] max-w-3xl mx-auto">
-              Our AI engine runs across all systems, delivering insights and automation that traditional security cannot match.
+              Our AI engine runs across all systems, delivering insights and
+              automation that traditional security cannot match.
             </p>
           </div>
 
@@ -382,8 +420,12 @@ export default function Home() {
                 className="p-6 bg-gradient-to-br from-[hsl(var(--brand-surface))] to-transparent border-[hsl(var(--brand-border))] hover:border-[hsl(var(--brand-accent-1))]/50 transition-all duration-300 hover:box-glow"
               >
                 <capability.icon className="h-10 w-10 text-[hsl(var(--brand-accent-1))] mb-4" />
-                <h3 className="text-lg font-semibold mb-2">{capability.title}</h3>
-                <p className="text-sm text-[hsl(var(--brand-muted))]">{capability.description}</p>
+                <h3 className="text-lg font-semibold mb-2">
+                  {capability.title}
+                </h3>
+                <p className="text-sm text-[hsl(var(--brand-muted))]">
+                  {capability.description}
+                </p>
               </Card>
             ))}
           </div>
@@ -400,7 +442,9 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Securing Critical Infrastructure
               <br />
-              <span className="text-[hsl(var(--brand-accent-1))]">Across MENA</span>
+              <span className="text-[hsl(var(--brand-accent-1))]">
+                Across MENA
+              </span>
             </h2>
           </div>
 
@@ -413,7 +457,9 @@ export default function Home() {
               >
                 <industry.icon className="h-10 w-10 text-[hsl(var(--brand-accent-1))] mx-auto mb-4 group-hover:text-[hsl(var(--brand-accent-2))] transition-colors" />
                 <h3 className="font-semibold mb-2 text-sm">{industry.name}</h3>
-                <p className="text-xs text-[hsl(var(--brand-muted))]">{industry.count}</p>
+                <p className="text-xs text-[hsl(var(--brand-muted))]">
+                  {industry.count}
+                </p>
               </Link>
             ))}
           </div>
@@ -423,9 +469,12 @@ export default function Home() {
       {/* FINAL CTA */}
       <section className="relative py-24 bg-gradient-to-br from-[hsl(var(--brand-accent-1))]/5 via-[hsl(var(--brand-accent-2))]/5 to-transparent border-y border-[hsl(var(--brand-border))]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Upgrade Your Security Infrastructure?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Ready to Upgrade Your Security Infrastructure?
+          </h2>
           <p className="text-xl text-[hsl(var(--brand-muted))] mb-10 max-w-3xl mx-auto">
-            Schedule a comprehensive security assessment and discover how AI can transform your protection strategy.
+            Schedule a comprehensive security assessment and discover how AI can
+            transform your protection strategy.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
