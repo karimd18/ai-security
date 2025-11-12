@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fix border-border issue by defining it manually */
+@layer utilities {
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+}
+
+/* Base Theme Variables */
+@layer base {
+  :root {
+    --brand-bg: 2 35% 5%;
+    --brand-surface: 0 0% 100% / 0.05;
+    --brand-accent-1: 195 100% 50%;
+    --brand-accent-2: 165 100% 50%;
+    --brand-text: 210 40% 95%;
+    --brand-muted: 210 15% 60%;
+    --brand-border: 0 0% 100% / 0.08;
+
+    --background: var(--brand-bg);
+    --foreground: var(--brand-text);
+    --card: 222 47% 8%;
+    --card-foreground: var(--brand-text);
+    --popover: 222 47% 8%;
+    --popover-foreground: var(--brand-text);
+    --primary: var(--brand-accent-1);
+    --primary-foreground: 222 47% 8%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: var(--brand-text);
+    --muted: 217 33% 17%;
+    --muted-foreground: var(--brand-muted);
+    --accent: var(--brand-accent-2);
+    --accent-foreground: 222 47% 8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: var(--brand-border);
+    --input: 217 33% 17%;
+    --ring: var(--brand-accent-1);
+    --radius: 0.75rem;
+  }
+}
+
+/* Global Element Styling */
+@layer base {
+  * {
+    border-color: hsl(var(--border));  /* <- no Tailwind utility needed */
+  }
+
+  body {
+    /* keep your existing line, or swap to raw CSS if you prefer */
+    /* @apply bg-background text-foreground antialiased; */
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "tnum";
+  }
+}
+
+/* Utility Animations, Glow, etc. */
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--brand-accent-1) / 0.5);
+  }
+
+  .box-glow {
+    box-shadow: 0 0 30px hsl(var(--brand-accent-1) / 0.2);
+  }
+
+  .box-glow-cyan {
+    box-shadow: 0 0 30px hsl(var(--brand-accent-2) / 0.2);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--brand-accent-1) / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(var(--brand-accent-1) / 0.5); }
+  }
+
+  @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    .glass-effect {
+      background: hsl(var(--brand-surface));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .animate-fade-in, .animate-slide-up, .animate-pulse-glow { animation: none; }
+  }
+}
