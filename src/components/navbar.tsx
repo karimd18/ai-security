@@ -21,15 +21,15 @@ import {
 
 import Image from "next/image";
 
-const solutions = [
-  { name: "CCTV Systems", href: "/solutions/cctv", icon: Video },
-  { name: "Fire Alarm", href: "/solutions/fire-alarm", icon: Flame },
-  { name: "Access Control", href: "/solutions/access-control", icon: Lock },
-  { name: "Intrusion Alarm", href: "/solutions/intrusion-alarm", icon: Bell },
-  { name: "Home Automation", href: "/solutions/home-automation", icon: Home },
-  { name: "Large Scale Projects", href: "/solutions/large-scale", icon: Building2 },
-  { name: "System Integration", href: "/solutions/integration", icon: Settings },
-  { name: "System Designs", href: "/solutions/system-designs", icon: Settings },
+const services = [
+  { name: "CCTV Systems", href: "/services/cctv", icon: Video },
+  { name: "Fire Alarm", href: "/services/fire-alarm", icon: Flame },
+  { name: "Access Control", href: "/services/access-control", icon: Lock },
+  { name: "Intrusion Alarm", href: "/services/intrusion-alarm", icon: Bell },
+  { name: "Home Automation", href: "/services/home-automation", icon: Home },
+  { name: "Large Scale Projects", href: "/services/large-scale", icon: Building2 },
+  { name: "System Integration", href: "/services/integration", icon: Settings },
+  { name: "System Designs", href: "/services/system-designs", icon: Settings },
   { name: "Control Rooms", href: "/control-rooms", icon: MonitorPlay },
   { name: "Robotics", href: "/robotics", icon: Bot },
   { name: "LED Screens", href: "/led", icon: MonitorPlay },
@@ -38,7 +38,7 @@ const solutions = [
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showSolutions, setShowSolutions] = useState(false);
+  const [showservices, setShowservices] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,36 +71,36 @@ export function Navbar() {
             </Link>
 
             <div
-              className="relative group/solutions"
-              onMouseEnter={() => setShowSolutions(true)}
-              onMouseLeave={() => setShowSolutions(false)}
+              className="relative group/services"
+              onMouseEnter={() => setShowservices(true)}
+              onMouseLeave={() => setShowservices(false)}
             >
               <button className="flex items-center space-x-1 text-sm font-medium hover:text-[hsl(var(--brand-accent-1))] transition-colors py-2">
-                <span>Solutions</span>
+                <span>Services</span>
                 <ChevronDown className="h-4 w-4" />
               </button>
 
-              {showSolutions && (
+              {showservices && (
                 <div className="absolute top-full left-0 pt-2 w-[700px] z-50">
                   <div className="bg-[hsl(var(--brand-bg))]/95 backdrop-blur-xl border border-[hsl(var(--brand-border))] rounded-lg p-6 shadow-2xl">
                     <div className="grid grid-cols-3 gap-3">
-                      {solutions.map((solution) => (
+                      {services.map((service) => (
                         <Link
-                          key={solution.href}
-                          href={solution.href}
+                          key={service.href}
+                          href={service.href}
                           className="flex items-start space-x-3 p-3 rounded-lg hover:bg-[hsl(var(--brand-surface))] transition-colors group"
                         >
-                          <solution.icon className="h-5 w-5 text-[hsl(var(--brand-accent-1))] mt-0.5 group-hover:text-[hsl(var(--brand-accent-2))] transition-colors flex-shrink-0" />
-                          <span className="text-sm font-medium leading-tight">{solution.name}</span>
+                          <service.icon className="h-5 w-5 text-[hsl(var(--brand-accent-1))] mt-0.5 group-hover:text-[hsl(var(--brand-accent-2))] transition-colors flex-shrink-0" />
+                          <span className="text-sm font-medium leading-tight">{service.name}</span>
                         </Link>
                       ))}
                     </div>
                     <div className="mt-4 pt-4 border-t border-[hsl(var(--brand-border))]">
                       <Link
-                        href="/solutions"
+                        href="/services"
                         className="text-sm font-medium text-[hsl(var(--brand-accent-1))] hover:text-[hsl(var(--brand-accent-2))] transition-colors flex items-center justify-center"
                       >
-                        View All Solutions →
+                        View All services →
                       </Link>
                     </div>
                   </div>
@@ -146,16 +146,16 @@ export function Navbar() {
                   Home
                 </Link>
                 <div>
-                  <div className="text-lg font-medium mb-3">Solutions</div>
+                  <div className="text-lg font-medium mb-3">services</div>
                   <div className="flex flex-col space-y-2 ml-4">
-                    {solutions.map((solution) => (
+                    {services.map((service) => (
                       <Link
-                        key={solution.href}
-                        href={solution.href}
+                        key={service.href}
+                        href={service.href}
                         className="flex items-center space-x-2 text-sm text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors"
                       >
-                        <solution.icon className="h-4 w-4" />
-                        <span>{solution.name}</span>
+                        <service.icon className="h-4 w-4" />
+                        <span>{service.name}</span>
                       </Link>
                     ))}
                   </div>

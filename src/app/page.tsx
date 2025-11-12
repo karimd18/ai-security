@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -45,9 +46,9 @@ const services = [
       "Smart anomaly detection via computer vision",
       "Predictive incident alerts before escalation",
       "Facial recognition with privacy compliance",
-      "Automated threat classification"
+      "Automated threat classification",
     ],
-    href: "/solutions/cctv"
+    href: "/services/cctv",
   },
   {
     icon: Flame,
@@ -57,9 +58,9 @@ const services = [
       "Smoke pattern analysis for early detection",
       "Predictive maintenance alerts",
       "Auto escalation to emergency services",
-      "False alarm reduction up to 65%"
+      "False alarm reduction up to 65%",
     ],
-    href: "/solutions/fire-alarm"
+    href: "/services/fire-alarm",
   },
   {
     icon: Lock,
@@ -69,9 +70,9 @@ const services = [
       "Facial verification and liveness detection",
       "Tailgating detection via AI",
       "Adaptive permission logic based on context",
-      "Real-time identity analytics dashboard"
+      "Real-time identity analytics dashboard",
     ],
-    href: "/solutions/access-control"
+    href: "/services/access-control",
   },
   {
     icon: Bell,
@@ -81,9 +82,9 @@ const services = [
       "Behavior analysis for threat assessment",
       "False alarm reduction via ML patterns",
       "Multi-sensor data fusion",
-      "Intelligent threat prioritization"
+      "Intelligent threat prioritization",
     ],
-    href: "/solutions/intrusion-alarm"
+    href: "/services/intrusion-alarm",
   },
   {
     icon: HomeIcon,
@@ -93,9 +94,9 @@ const services = [
       "AI-learned user behavior patterns",
       "Remote monitoring with anomaly alerts",
       "Secure automated routines",
-      "Energy optimization intelligence"
+      "Energy optimization intelligence",
     ],
-    href: "/solutions/home-automation"
+    href: "/services/home-automation",
   },
   {
     icon: Bot,
@@ -105,10 +106,10 @@ const services = [
       "Autonomous navigation and patrol",
       "Visual threat detection and classification",
       "Integration with VMS and alarm systems",
-      "24/7 perimeter monitoring"
+      "24/7 perimeter monitoring",
     ],
-    href: "/robotics"
-  }
+    href: "/robotics",
+  },
 ];
 
 const industries = [
@@ -131,22 +132,22 @@ const aiCapabilities = [
   {
     icon: Eye,
     title: "Real-Time Anomaly Detection",
-    description: "Computer vision analyzes video feeds 24/7, instantly identifying unusual behavior patterns."
+    description: "Computer vision analyzes video feeds 24/7, instantly identifying unusual behavior patterns.",
   },
   {
     icon: Brain,
     title: "Predictive Maintenance",
-    description: "AI predicts sensor failures before they occur, reducing downtime by 60%."
+    description: "AI predicts sensor failures before they occur, reducing downtime by 60%.",
   },
   {
     icon: Zap,
     title: "Automated Incident Triage",
-    description: "Intelligent classification and prioritization of security events for faster response."
+    description: "Intelligent classification and prioritization of security events for faster response.",
   },
   {
     icon: Sparkles,
     title: "Intelligent Reporting",
-    description: "Auto-generated insights and KPI dashboards with natural language summaries."
+    description: "Auto-generated insights and KPI dashboards with natural language summaries.",
   },
 ];
 
@@ -157,17 +158,12 @@ export default function Home() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          setStatsInView(true);
-        }
+        if (entries[0].isIntersecting) setStatsInView(true);
       },
       { threshold: 0.3 }
     );
 
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
+    if (statsRef.current) observer.observe(statsRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -175,10 +171,33 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
 
+      {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <AIGridBackground />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[hsl(var(--brand-bg))]/50 to-[hsl(var(--brand-bg))]"></div>
+        {/* Watermark logo (subtle, non-interactive, above grid & under content) */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-[2] flex items-center justify-center"
+        >
+          <Image
+            src="/logo.png" // place your logo in /public/logo.png
+            alt=""
+            width={900}
+            height={900}
+            priority
+            className="
+              select-none object-contain
+              w-[60vw] max-w-[560px]
+              opacity-[0.08] md:opacity-[0.10]
+              mix-blend-screen
+              blur-[0.3px]
+            "
+          />
+        </div>
+
+        {/* soft vertical gradient veil to keep text legible */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-transparent via-[hsl(var(--brand-bg))]/50 to-[hsl(var(--brand-bg))]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
           <Badge className="mb-6 bg-[hsl(var(--brand-accent-1))]/10 text-[hsl(var(--brand-accent-1))] border-[hsl(var(--brand-accent-1))]/30 hover:bg-[hsl(var(--brand-accent-1))]/20">
@@ -196,15 +215,29 @@ export default function Home() {
             End-to-end security systems engineered with built-in AI for prevention, detection, and rapid response across MENA.
           </p>
 
+          {/* CTAs – fixed outline text visibility */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Button className="bg-[hsl(var(--brand-accent-1))] hover:bg-[hsl(var(--brand-accent-1))]/90 text-lg text-[hsl(var(--brand-bg))] px-8 box-glow" asChild>
+            <Button
+              className="bg-[hsl(var(--brand-accent-1))] hover:bg-[hsl(var(--brand-accent-1))]/90 text-lg text-[hsl(var(--brand-bg))] px-8 box-glow"
+              asChild
+              aria-label="Request Design Audit"
+            >
               <Link href="/contact">
                 Request Design Audit
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button className="border-[hsl(var(--brand-accent-1))] text-[hsl(var(--brand-accent-1))] hover:bg-[hsl(var(--brand-accent-1))]/10 text-lg px-8" asChild>
-              <Link href="/solutions">Explore Solutions</Link>
+
+            {/* IMPORTANT: outline variant so text shows; explicit text color to match brand */}
+            <Button
+              variant="outline"
+              className="border-[hsl(var(--brand-accent-1))] text-[hsl(var(--brand-accent-1))] hover:bg-[hsl(var(--brand-accent-1))]/10 text-lg px-8"
+              asChild
+              aria-label="Explore services"
+            >
+              <Link href="/services">
+                Explore services
+              </Link>
             </Button>
           </div>
 
@@ -218,11 +251,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <ChevronRight className="h-6 w-6 text-[hsl(var(--brand-accent-1))] rotate-90" />
         </div>
       </section>
 
+      {/* STATS */}
       <section ref={statsRef} className="relative py-20 border-y border-[hsl(var(--brand-border))]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -243,6 +277,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* DEMO */}
       <section className="relative py-24 bg-gradient-to-b from-[hsl(var(--brand-surface))] to-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -263,10 +298,10 @@ export default function Home() {
                   "Real-time threat detection visualization",
                   "Automated response workflows",
                   "Cross-system intelligence coordination",
-                  "Predictive analytics dashboard"
+                  "Predictive analytics dashboard",
                 ].map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <div className="h-2 w-2 rounded-full bg-[hsl(var(--brand-accent-1))]"></div>
+                    <div className="h-2 w-2 rounded-full bg-[hsl(var(--brand-accent-1))]" />
                     <span className="text-[hsl(var(--brand-muted))]">{feature}</span>
                   </div>
                 ))}
@@ -274,10 +309,10 @@ export default function Home() {
             </div>
             <div className="relative">
               <div className="aspect-video rounded-2xl bg-gradient-to-br from-[hsl(var(--brand-accent-1))]/20 to-[hsl(var(--brand-accent-2))]/20 border border-[hsl(var(--brand-border))] overflow-hidden flex items-center justify-center group cursor-pointer hover:border-[hsl(var(--brand-accent-1))] transition-all">
-                <div className="absolute inset-0 bg-[hsl(var(--brand-bg))]/40 backdrop-blur-sm"></div>
+                <div className="absolute inset-0 bg-[hsl(var(--brand-bg))]/40 backdrop-blur-sm" />
                 <div className="relative z-10 text-center">
                   <div className="h-20 w-20 rounded-full bg-[hsl(var(--brand-accent-1))]/20 border-2 border-[hsl(var(--brand-accent-1))] flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <div className="h-0 w-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-[hsl(var(--brand-accent-1))] border-b-[12px] border-b-transparent ml-1"></div>
+                    <div className="h-0 w-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-[hsl(var(--brand-accent-1))] border-b-[12px] border-b-transparent ml-1" />
                   </div>
                   <p className="text-sm text-[hsl(var(--brand-muted))]">Video Showcase</p>
                   <p className="text-xs text-[hsl(var(--brand-muted))]/60 mt-1">Coming Soon</p>
@@ -288,11 +323,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SERVICES */}
       <section className="relative py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[hsl(var(--brand-accent-2))]/10 text-[hsl(var(--brand-accent-2))] border-[hsl(var(--brand-accent-2))]/30">
-              AI-Enhanced Solutions
+              AI-Enhanced services
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Security Systems
@@ -312,9 +348,13 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Button className="border-[hsl(var(--brand-accent-1))] text-lg text-[hsl(var(--brand-accent-1))] hover:bg-[hsl(var(--brand-accent-1))]/10" asChild>
-              <Link href="/solutions">
-                View All Solutions
+            <Button
+              variant="outline"
+              className="border-[hsl(var(--brand-accent-1))] text-lg text-[hsl(var(--brand-accent-1))] hover:bg-[hsl(var(--brand-accent-1))]/10"
+              asChild
+            >
+              <Link href="/services">
+                View All services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -322,15 +362,14 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CAPABILITIES */}
       <section className="relative py-24 bg-gradient-to-b from-transparent to-[hsl(var(--brand-surface))]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[hsl(var(--brand-accent-1))]/10 text-[hsl(var(--brand-accent-1))] border-[hsl(var(--brand-accent-1))]/30">
               Core AI Capabilities
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              The Intelligence Layer
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">The Intelligence Layer</h2>
             <p className="text-xl text-[hsl(var(--brand-muted))] max-w-3xl mx-auto">
               Our AI engine runs across all systems, delivering insights and automation that traditional security cannot match.
             </p>
@@ -338,7 +377,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {aiCapabilities.map((capability, index) => (
-              <Card key={index} className="p-6 bg-gradient-to-br from-[hsl(var(--brand-surface))] to-transparent border-[hsl(var(--brand-border))] hover:border-[hsl(var(--brand-accent-1))]/50 transition-all duration-300 hover:box-glow">
+              <Card
+                key={index}
+                className="p-6 bg-gradient-to-br from-[hsl(var(--brand-surface))] to-transparent border-[hsl(var(--brand-border))] hover:border-[hsl(var(--brand-accent-1))]/50 transition-all duration-300 hover:box-glow"
+              >
                 <capability.icon className="h-10 w-10 text-[hsl(var(--brand-accent-1))] mb-4" />
                 <h3 className="text-lg font-semibold mb-2">{capability.title}</h3>
                 <p className="text-sm text-[hsl(var(--brand-muted))]">{capability.description}</p>
@@ -348,6 +390,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* INDUSTRIES */}
       <section className="relative py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -377,19 +420,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FINAL CTA */}
       <section className="relative py-24 bg-gradient-to-br from-[hsl(var(--brand-accent-1))]/5 via-[hsl(var(--brand-accent-2))]/5 to-transparent border-y border-[hsl(var(--brand-border))]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Upgrade Your Security Infrastructure?
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Upgrade Your Security Infrastructure?</h2>
           <p className="text-xl text-[hsl(var(--brand-muted))] mb-10 max-w-3xl mx-auto">
             Schedule a comprehensive security assessment and discover how AI can transform your protection strategy.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button className="bg-[hsl(var(--brand-accent-1))] hover:bg-[hsl(var(--brand-accent-1))]/90 text-lg text-[hsl(var(--brand-bg))] px-8 box-glow" asChild>
+            <Button
+              className="bg-[hsl(var(--brand-accent-1))] hover:bg-[hsl(var(--brand-accent-1))]/90 text-lg text-[hsl(var(--brand-bg))] px-8 box-glow"
+              asChild
+            >
               <Link href="/contact">Request Design Audit</Link>
             </Button>
-            <Button className="border-[hsl(var(--brand-accent-1))] text-[hsl(var(--brand-accent-1))] text-lg hover:bg-[hsl(var(--brand-accent-1))]/10 px-8" asChild>
+            <Button
+              variant="outline"
+              className="border-[hsl(var(--brand-accent-1))] text-[hsl(var(--brand-accent-1))] text-lg hover:bg-[hsl(var(--brand-accent-1))]/10 px-8"
+              asChild
+            >
               <Link href="/projects">View Case Studies</Link>
             </Button>
           </div>
