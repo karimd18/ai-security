@@ -105,9 +105,9 @@ export function Footer() {
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors">
+              {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors">
                 <Twitter className="h-5 w-5" />
-              </a>
+              </a> */}
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
