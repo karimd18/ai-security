@@ -106,7 +106,7 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+971 XX XXX XXXX"
+                        placeholder="+961 XX XXX XXX"
                         required
                         className="bg-[hsl(var(--brand-surface))] border-[hsl(var(--brand-border))]"
                       />
