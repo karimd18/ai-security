@@ -28,19 +28,19 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3 text-[hsl(var(--brand-muted))]">
                 <Mail className="h-4 w-4 text-[hsl(var(--brand-accent-1))]" />
-                <a href="mailto:info@aisecurity.com" className="hover:text-[hsl(var(--brand-accent-1))] transition-colors">
-                  info@aisecurity.com
+                <a href="mailto:aismail@ai-security.pro" className="hover:text-[hsl(var(--brand-accent-1))] transition-colors">
+                  aismail@ai-security.pro
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-[hsl(var(--brand-muted))]">
                 <Phone className="h-4 w-4 text-[hsl(var(--brand-accent-1))]" />
-                <a href="tel:+971123456789" className="hover:text-[hsl(var(--brand-accent-1))] transition-colors">
-                  +971 12 345 6789
+                <a href="tel:+96170213718" className="hover:text-[hsl(var(--brand-accent-1))] transition-colors">
+                  +961 70 213 718
                 </a>
               </div>
               <div className="flex items-start space-x-3 text-[hsl(var(--brand-muted))]">
                 <MapPin className="h-4 w-4 text-[hsl(var(--brand-accent-1))] mt-0.5" />
-                <span>Dubai, United Arab Emirates</span>
+                <span>Beirut, Lebanon</span>
               </div>
             </div>
           </div>

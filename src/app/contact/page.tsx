@@ -133,7 +133,7 @@ export default function Contact() {
                         </SelectContent>
                       </Select>
                     </div>
-                    <div className="space-y-2">
+                    {/* <div className="space-y-2">
                       <Label htmlFor="budget">Budget Range</Label>
                       <Select value={formData.budget} onValueChange={(value) => setFormData({ ...formData, budget: value })}>
                         <SelectTrigger className="bg-[hsl(var(--brand-surface))] border-[hsl(var(--brand-border))]">
@@ -147,7 +147,7 @@ export default function Contact() {
                           <SelectItem value="enterprise">Enterprise (Custom)</SelectItem>
                         </SelectContent>
                       </Select>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div className="space-y-2">
@@ -183,8 +183,8 @@ export default function Contact() {
                     <Mail className="h-5 w-5 text-[hsl(var(--brand-accent-1))] mt-0.5" />
                     <div>
                       <p className="text-sm font-medium">Email</p>
-                      <a href="mailto:info@aisecurity.com" className="text-sm text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))]">
-                        info@aisecurity.com
+                      <a href="mailto:aismail@ai-security.pro" className="text-sm text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))]">
+                        aismail@ai-security.pro
                       </a>
                     </div>
                   </div>
@@ -192,8 +192,8 @@ export default function Contact() {
                     <Phone className="h-5 w-5 text-[hsl(var(--brand-accent-1))] mt-0.5" />
                     <div>
                       <p className="text-sm font-medium">Phone</p>
-                      <a href="tel:+971123456789" className="text-sm text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))]">
-                        +971 12 345 6789
+                      <a href="tel:+96170213718" className="text-sm text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))]">
+                        +961 70 213 718
                       </a>
                     </div>
                   </div>
@@ -202,7 +202,7 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-medium">Location</p>
                       <p className="text-sm text-[hsl(var(--brand-muted))]">
-                        Dubai, United Arab Emirates
+                        Beirut, Lebanon
                       </p>
                     </div>
                   </div>
@@ -218,7 +218,7 @@ export default function Contact() {
                   Need immediate assistance? Chat with our team on WhatsApp.
                 </p>
                 <Button className="w-full border-[hsl(var(--brand-accent-1))] text-[hsl(var(--brand-accent-1))] hover:bg-[hsl(var(--brand-accent-1))]/10" asChild>
-                  <a href="https://wa.me/971123456789" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/96170213718" target="_blank" rel="noopener noreferrer">
                     Start WhatsApp Chat
                   </a>
                 </Button>
