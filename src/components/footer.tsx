@@ -63,7 +63,7 @@ export function Footer() {
               <li><Link href="/about" className="text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors">About Us</Link></li>
               <li><Link href="/projects" className="text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors">Case Studies</Link></li>
               <li><Link href="/consultancy" className="text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors">Consultancy</Link></li>
-              <li><Link href="/careers" className="text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors">Careers</Link></li>
+              {/* <li><Link href="/careers" className="text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors">Careers</Link></li> */}
               <li><Link href="/blog" className="text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors">Blog</Link></li>
               <li><Link href="/support" className="text-[hsl(var(--brand-muted))] hover:text-[hsl(var(--brand-accent-1))] transition-colors">Support</Link></li>
             </ul>
