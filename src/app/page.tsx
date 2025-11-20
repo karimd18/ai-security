@@ -129,7 +129,7 @@ const industries = [
 
 const stats = [
   { value: "250+", label: "Projects Deployed", icon: CheckCircle2 },
-  { value: "45%", label: "False Alarm Reduction", icon: TrendingUp },
+  { value: "85%", label: "False Alarm Reduction", icon: TrendingUp },
   { value: "< 2min", label: "Average Response Time", icon: Clock },
   { value: "99.8%", label: "System Uptime", icon: AlertTriangle },
 ];

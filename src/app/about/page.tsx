@@ -106,7 +106,7 @@ export default function About() {
               <Card className="p-6 border-[hsl(var(--brand-border))]">
                 <h3 className="text-xl font-semibold mb-2 text-[hsl(var(--brand-accent-1))]">Compliance & Certification</h3>
                 <p className="text-[hsl(var(--brand-muted))]">
-                  ISO 27001 certified with full GDPR, SOC 2, and NIST compliance built into every solution.
+                  Full GDPR, SOC 2, and NIST compliance built into every solution.
                 </p>
               </Card>
             </div>

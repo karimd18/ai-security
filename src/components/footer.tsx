@@ -118,7 +118,7 @@ export function Footer() {
           </div>
 
           <div className="mt-6 text-center text-sm text-[hsl(var(--brand-muted))]">
-            <p>&copy; {new Date().getFullYear()} AI Security. All rights reserved. ISO 27001 Certified.</p>
+            <p>&copy; {new Date().getFullYear()} AI Security. All rights reserved.</p>
           </div>
         </div>
       </div>
